@@ -1,0 +1,21 @@
+header.navbar {
+  background: #252525;
+
+  @media only screen and (min-width: 992px) {
+    input {
+      width: 60%;
+    }
+  }
+}
+
+body {
+  text-rendering: optimizeLegibility;
+}
+
+.card {
+  border-radius: 0;
+
+  .card-img-top {
+    border-radius: 0;
+  }
+}

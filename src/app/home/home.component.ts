@@ -15,8 +15,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.data.getCars().subscribe(data => {
       this.cars = data;
-      console.log(this.cars)
+      console.log(this.cars);
     });
   }
-
 }
