@@ -1,4 +1,4 @@
-# LemonAutosAngular
+# Lemon Autos | Angular7 Independent Study
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3.
 
