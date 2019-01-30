@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'lemon-autos-angular';
+  title = 'Lemon Autos Angular';
 }

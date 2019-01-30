@@ -1,3 +1,31 @@
-<p>
-  cars works!
-</p>
+<div class="[vin]">
+  <div class="jumbotron text-white m-0 p-0">
+    <img class="car-image" src="showImage" alt="product_name">
+    <div class="meta p-4 mb-0">
+      <h2 class="display-5 text-warning">Product Name</h2>
+      <h3><small class="text-white-50">Sale Price:</small>
+        <!-- {{ discountedPrice.toLocaleString('en-IN', {style: 'currency', currency: 'USD'}) }} -->
+      </h3>
+
+      <p class="small">VIN</p>
+      <div class="interior-img mb-4">
+        <picture>
+          <img src="main_img" :alt="product_name" class="img-fluid img-thumbnail mr-2 mb-2">
+          <img class="img-fluid img-thumbnail mr-2 mb-2"
+            src="product_imgs[index]" alt="product_name + index">
+        </picture>
+      </div>
+
+      <button class="btn btn-lg mr-2 mb-2">
+        <!-- {{ toggle ? 'See Vehicle Specs' : 'Schedule a Test Drive' }} -->
+      </button>
+
+      <!-- <router-link class="btn btn-lg btn-success mb-2" to="/">Back to Main Page</router-link> -->
+
+      <!-- <Form v-if="toggle" :vin="vin" :product_name="product_name" />
+      <Specs v-else :transmission="transmission" :downpayment="downpayment" :tag_line="tag_line" :description="description"
+        :doors="doors" :type="type" :mileage="mileage" :financing="financing" :discount="discount" :price="price" /> -->
+    </div>
+
+  </div>
+</div>

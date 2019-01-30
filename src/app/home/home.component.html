@@ -8,40 +8,35 @@
   </header>
 
   <div class="row p-0 m-0">
-    <div class="cars col-sm-12 row p-0 m-0">
+    <div *ngIf="cars" class="cars col-sm-12 row p-0 m-0">
       <!-- car -->
-      <div class="card border-white p-0 m-0 col-lg-4 col-md-6 col-sm-12 shadow-sm">
-        <img src="#" class="card-img-top" alt="product_name">
-        <div class="bg-secondary card-footer text-center shadow-sm">
-          <h4 class="text-white mb-0">Product Name</h4>
-          <div class="small text-white-50">
-            VIN
+        <div *ngFor="let car of cars" class="card border-white p-0 m-0 col-lg-4 col-md-6 col-sm-12 shadow-sm">
+          <img [src]="car.main_img" class="card-img-top" [alt]="car.product_name">
+          <div class="bg-secondary card-footer text-center shadow-sm">
+            <h4 class="text-white mb-0">{{ car.product_name }}</h4>
+            <div class="small text-white-50">
+              VIN {{ car.vin }}
+            </div>
+          </div>
+          <div class="card-body bg-light p-4">
+            <p class="card-title text-success lead">{{ car.discount * 100 }}% Off Sticker Price</p>
+            <div class="card-text text-muted price">
+              {{ toDollah(car.price) }}</div>
+            <h4 class="card-text text-danger">{{ toDollah(discountedPrice(car.price, car.discount) )}}</h4>
+
+            <div class="mb-3 d-flex justify-content-left align-items-center">
+              <span [textContent]="clearanceBadge(discountedPrice(car.price, car.discount))" class="badge badge-danger mr-1">
+              </span>
+              <span [textContent]="lowMilesBadge(car.mileage)" class="badge badge-primary mr-1">
+              </span>
+              <span [textContent]="priceDropBadge(car.discount)" class="badge badge-warning mr-1">
+              </span>
+              <span [textContent]="financingBadge(car.financing)" class="badge badge-success mr-1">
+              </span>
+            </div>
+            <button [routerLink]="['/cars', car.id, car.vin]" class="btn btn-outline-success">See Details</button>
           </div>
         </div>
-        <div class="card-body bg-light p-4">
-          <p class="card-title text-success lead">20% Sticker Price</p>
-          <div class="card-text text-muted">
-            $90,000</div>
-
-          <h4 class="card-text text-danger">$80,000</h4>
-
-          <div class="mb-3 d-flex justify-content-left align-items-center">
-            <span class="badge badge-danger mr-1">
-              Clearance!
-            </span>
-            <span class="badge badge-primary mr-1">
-              Low Miles!
-            </span>
-            <span class="badge badge-warning mr-1">
-              Huge Price Drop!
-            </span>
-            <span class="badge badge-success mr-1">
-              Financing OK
-            </span>
-          </div>
-          <button class="btn btn-outline-success">See Details</button>
-        </div>
-      </div>
       <!-- car ends -->
     </div>
   </div>
